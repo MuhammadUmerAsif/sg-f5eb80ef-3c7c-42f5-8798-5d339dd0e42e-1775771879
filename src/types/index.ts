@@ -42,12 +42,13 @@ export interface Subscription {
 
 export interface Invoice {
   id: string;
+  invoiceNumber: string;
   tenantId: string;
   subscriptionId: string;
   amount: number;
   status: InvoiceStatus;
   issuedAt: string;
-  dueAt: string;
+  dueDate: string;
   paidAt: string | null;
 }
 

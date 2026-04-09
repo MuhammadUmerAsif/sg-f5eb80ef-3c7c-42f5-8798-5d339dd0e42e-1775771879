@@ -204,13 +204,59 @@ export const mockWarehouses: Warehouse[] = [
   }
 ];
 
+export const mockSubscriptions: Subscription[] = [
+  {
+    id: "sub_1",
+    tenantId: "tenant_1",
+    planId: "plan_growth",
+    status: "active",
+    currentPeriodStart: "2026-04-01T00:00:00Z",
+    currentPeriodEnd: "2026-05-01T00:00:00Z"
+  },
+  {
+    id: "sub_2",
+    tenantId: "tenant_2",
+    planId: "plan_starter",
+    status: "trial",
+    currentPeriodStart: "2026-03-20T00:00:00Z",
+    currentPeriodEnd: "2026-04-20T00:00:00Z"
+  }
+];
+
+export const mockInvoices: Invoice[] = [
+  {
+    id: "inv_1",
+    invoiceNumber: "INV-2026-001",
+    tenantId: "tenant_1",
+    subscriptionId: "sub_1",
+    amount: 299.00,
+    status: "paid",
+    issuedAt: "2026-04-01T00:00:00Z",
+    dueDate: "2026-04-15T00:00:00Z",
+    paidAt: "2026-04-02T10:30:00Z"
+  },
+  {
+    id: "inv_2",
+    invoiceNumber: "INV-2026-002",
+    tenantId: "tenant_3",
+    subscriptionId: "sub_3",
+    amount: 999.00,
+    status: "pending",
+    issuedAt: "2026-04-05T00:00:00Z",
+    dueDate: "2026-04-20T00:00:00Z",
+    paidAt: null
+  }
+];
+
 let mockDataStore = {
   tenants: [...mockTenants],
   demoRequests: [...mockDemoRequests],
   adminUsers: [...mockAdminUsers],
   inventory: [...mockInventory],
   warehouses: [...mockWarehouses],
-  plans: [...mockPlans]
+  plans: [...mockPlans],
+  subscriptions: [...mockSubscriptions],
+  invoices: [...mockInvoices]
 };
 
 export const getMockData = () => mockDataStore;
@@ -226,6 +272,8 @@ export const resetMockData = () => {
     adminUsers: [...mockAdminUsers],
     inventory: [...mockInventory],
     warehouses: [...mockWarehouses],
-    plans: [...mockPlans]
+    plans: [...mockPlans],
+    subscriptions: [...mockSubscriptions],
+    invoices: [...mockInvoices]
   };
 };
