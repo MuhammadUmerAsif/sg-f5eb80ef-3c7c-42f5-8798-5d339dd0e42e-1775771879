@@ -1,6 +1,6 @@
 ---
 title: Marketing Site Pages
-status: in_progress
+status: done
 priority: high
 type: feature
 tags: [marketing, frontend]
@@ -13,9 +13,9 @@ position: 2
 Build the public marketing site with landing page, pricing, and contact form. Clean, conversion-focused design that clearly communicates the WMS value proposition.
 
 ## Checklist
-- [ ] Create landing page with hero section, features showcase, social proof, CTA
-- [ ] Build pricing page with three tiers (Starter, Growth, Enterprise) with feature comparison
-- [ ] Implement contact/demo request form with validation and success state
-- [ ] Add marketing site navigation header with login/signup links
-- [ ] Create footer with links to docs, support, legal pages
-- [ ] Add responsive design for mobile/tablet
+- [x] Create landing page with hero section, features showcase, social proof, CTA
+- [x] Build pricing page with three tiers (Starter, Growth, Enterprise) with feature comparison
+- [x] Implement contact/demo request form with validation and success state
+- [x] Add marketing site navigation header with login/signup links
+- [x] Create footer with links to docs, support, legal pages
+- [x] Add responsive design for mobile/tablet
