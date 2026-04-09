@@ -1,6 +1,10 @@
 export const mockDelay = (ms: number = 800) => 
   new Promise(resolve => setTimeout(resolve, ms));
 
+export const mockApiCall = async (delay = 800) => {
+  await mockDelay(delay);
+};
+
 export class MockApiClient {
   async get<T>(endpoint: string): Promise<T> {
     await mockDelay();
