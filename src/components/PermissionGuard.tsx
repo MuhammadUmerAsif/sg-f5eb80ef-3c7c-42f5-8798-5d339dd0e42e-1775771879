@@ -5,69 +5,69 @@ import { ReactNode } from "react";
 interface PermissionGuardProps {
   children: ReactNode;
   permission: string;
-  role?: string;
   fallback?: ReactNode;
+  roles?: string[];
 }
 
-const mockPermissions = {
-  super_admin: ["*"],
-  admin: [
+// Mock permission system - in production, this would come from auth context
+const mockUserPermissions = [
+  "tenants.view",
+  "tenants.create",
+  "tenants.edit",
+  "tenants.delete",
+  "subscriptions.manage",
+  "invoices.view",
+  "demo-requests.manage",
+  "admins.manage",
+  "inventory.manage",
+  "warehouses.manage",
+  "orders.manage",
+  "shipments.manage",
+  "employees.manage",
+  "reports.view",
+  "settings.edit",
+  "*" // Super admin wildcard
+];
+
+const rolePermissions: Record<string, string[]> = {
+  "Super Admin": ["*"],
+  "Admin": [
     "tenants.view",
-    "tenants.create",
     "tenants.edit",
-    "tenants.delete",
-    "plans.view",
-    "plans.create",
-    "plans.edit",
-    "plans.delete",
-    "demo.view",
-    "demo.edit",
+    "subscriptions.manage",
     "invoices.view",
-    "payments.view",
+    "demo-requests.manage",
+    "admins.view"
   ],
-  support: [
+  "Support": [
     "tenants.view",
-    "demo.view",
-    "demo.edit",
+    "demo-requests.manage",
+    "invoices.view"
   ],
-  tenant_admin: ["*"],
-  manager: [
+  "Manager": [
+    "inventory.manage",
+    "warehouses.manage",
+    "orders.manage",
+    "shipments.manage",
+    "employees.view",
+    "reports.view"
+  ],
+  "Picker": [
     "inventory.view",
-    "inventory.create",
-    "inventory.edit",
-    "warehouses.view",
-    "warehouses.create",
     "orders.view",
-    "orders.create",
-    "orders.edit",
-    "shipments.view",
-    "shipments.create",
+    "shipments.view"
   ],
-  operator: [
-    "inventory.view",
-    "warehouses.view",
-    "orders.view",
-    "shipments.view",
-  ],
-  viewer: [
+  "Viewer": [
     "inventory.view",
     "warehouses.view",
     "orders.view",
-  ],
+    "reports.view"
+  ]
 };
 
-export function PermissionGuard({
-  children,
-  permission,
-  role = "admin",
-  fallback = null,
-}: PermissionGuardProps) {
-  const userRole = role as keyof typeof mockPermissions;
-  const permissions = mockPermissions[userRole] || [];
-
-  const hasPermission =
-    permissions.includes("*") || permissions.includes(permission);
-
+export function PermissionGuard({ children, permission, fallback = null, roles }: PermissionGuardProps) {
+  const hasPermission = mockUserPermissions.includes("*") || mockUserPermissions.includes(permission);
+  
   if (!hasPermission) {
     return <>{fallback}</>;
   }
@@ -75,13 +75,17 @@ export function PermissionGuard({
   return <>{children}</>;
 }
 
-export function usePermissions(role: string = "admin") {
-  const userRole = role as keyof typeof mockPermissions;
-  const permissions = mockPermissions[userRole] || [];
+export function usePermissions() {
+  const permissions = mockUserPermissions;
 
   return {
-    can: (permission: string) =>
+    hasPermission: (permission: string) =>
       permissions.includes("*") || permissions.includes(permission),
     permissions,
+    hasRole: (role: string) => {
+      const userRoles = ["Super Admin"]; // Mock - would come from auth
+      return userRoles.includes(role);
+    },
+    getRolePermissions: (role: string) => rolePermissions[role] || []
   };
 }

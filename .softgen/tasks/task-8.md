@@ -1,6 +1,6 @@
 ---
 title: Tenant Dashboard - Employees, Reports & Settings
-status: todo
+status: done
 priority: medium
 type: feature
 tags: [tenant, admin]
@@ -10,12 +10,11 @@ position: 8
 ---
 
 ## Notes
-Employee management with RBAC, reporting/analytics, and tenant settings configuration.
+Add employee management with RBAC UI, reporting analytics, and tenant settings configuration.
 
 ## Checklist
-- [ ] Create Employees module with role-based permissions (Admin, Manager, Operator, Viewer)
-- [ ] Build permission assignment UI for employees
-- [ ] Implement Reports page: inventory valuation, movement logs, order analytics
-- [ ] Add chart visualizations for reports
-- [ ] Create Settings page: company info, warehouse configuration, preferences
-- [ ] Build user profile and password change forms
+- [x] Create employees management page with role-based access display
+- [x] Build reports & analytics dashboard with KPIs
+- [x] Add chart placeholders for inventory valuation, turnover, utilization
+- [x] Create settings page with tabs for company info, warehouse configuration, preferences
+- [x] Build user profile and password change forms

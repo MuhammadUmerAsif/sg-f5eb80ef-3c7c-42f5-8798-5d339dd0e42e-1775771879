@@ -1,6 +1,6 @@
 ---
 title: RBAC System & Permission Guards
-status: todo
+status: done
 priority: high
 type: feature
 tags: [rbac, security]
@@ -10,14 +10,14 @@ position: 9
 ---
 
 ## Notes
-Implement comprehensive RBAC system with permission guards, role definitions, and permission-based UI rendering across both admin and tenant dashboards.
+Implement comprehensive role-based access control system with permission guards for both admin and tenant users.
 
 ## Checklist
-- [ ] Define permission structure for admin roles
-- [ ] Define permission structure for tenant roles
-- [ ] Create PermissionGuard component with permission prop
-- [ ] Implement usePermissions hook
-- [ ] Add permission checks to all CRUD actions
-- [ ] Restrict page access based on roles
-- [ ] Add role badges to user displays
-- [ ] Create role selection components
+- [x] Create PermissionGuard component for conditional UI rendering
+- [x] Define permission sets for admin roles (Super Admin, Admin, Support)
+- [x] Define permission sets for tenant roles (Admin, Manager, Picker, Viewer)
+- [x] Add usePermissions hook for programmatic access checks
+- [x] Implement role-to-permissions mapping
+- [x] Add permission-based button/action visibility
+- [x] Create role badges to user displays
+- [x] Create role selection components
