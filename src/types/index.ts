@@ -101,8 +101,10 @@ export interface Warehouse {
   name: string;
   code: string;
   address: string;
-  capacity: number;
-  currentUtilization: number;
+  city: string;
+  country: string;
+  capacity?: number;
+  currentUtilization?: number;
   status: "active" | "inactive";
   totalRacks: number;
   totalBins: number;

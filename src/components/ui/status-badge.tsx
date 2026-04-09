@@ -3,7 +3,7 @@ import type { TenantStatus, SubscriptionStatus, InvoiceStatus, OrderStatus, Ship
 
 interface StatusBadgeProps {
   status: TenantStatus | SubscriptionStatus | InvoiceStatus | OrderStatus | ShipmentStatus | string;
-  type?: "tenant" | "subscription" | "invoice" | "order" | "shipment";
+  type?: "tenant" | "subscription" | "invoice" | "order" | "shipment" | "warehouse";
 }
 
 const statusConfig = {
@@ -36,6 +36,10 @@ const statusConfig = {
     in_transit: { label: "In Transit", variant: "secondary" as const },
     delivered: { label: "Delivered", variant: "default" as const },
     returned: { label: "Returned", variant: "destructive" as const }
+  },
+  warehouse: {
+    active: { label: "Active", variant: "default" as const },
+    inactive: { label: "Inactive", variant: "outline" as const }
   }
 };
 
