@@ -40,7 +40,8 @@ const statusConfig = {
 };
 
 export function StatusBadge({ status, type = "tenant" }: StatusBadgeProps) {
-  const config = statusConfig[type]?.[status as keyof typeof statusConfig[typeof type]] || {
+  const typeConfig = statusConfig[type] as Record<string, { label: string, variant: "default" | "secondary" | "destructive" | "outline" }>;
+  const config = typeConfig?.[status] || {
     label: status,
     variant: "outline" as const
   };
