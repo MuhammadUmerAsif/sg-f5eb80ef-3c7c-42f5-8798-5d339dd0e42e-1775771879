@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Package, LayoutDashboard, Users, CreditCard, FileText, MessageSquare, UserCog, Settings } from "lucide-react";
+import { Package, LayoutDashboard, Users, CreditCard, FileText, MessageSquare, UserCog, Settings, PackageSearch, Warehouse, ShoppingCart, TrendingUp, Truck, Building2, UserCheck } from "lucide-react";
 
 const adminNavItems = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -14,9 +14,23 @@ const adminNavItems = [
   { href: "/admin/admins", label: "Admin Users", icon: UserCog },
 ];
 
+const tenantNavItems = [
+  { href: "/tenant/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/tenant/inventory", label: "Inventory", icon: PackageSearch },
+  { href: "/tenant/warehouses", label: "Warehouses", icon: Warehouse },
+  { href: "/tenant/orders", label: "Orders", icon: ShoppingCart },
+  { href: "/tenant/stock-movement", label: "Stock Movement", icon: TrendingUp },
+  { href: "/tenant/shipments", label: "Shipments", icon: Truck },
+  { href: "/tenant/suppliers", label: "Suppliers", icon: Building2 },
+  { href: "/tenant/customers", label: "Customers", icon: Users },
+  { href: "/tenant/employees", label: "Employees", icon: UserCheck },
+  { href: "/tenant/reports", label: "Reports", icon: FileText },
+  { href: "/tenant/settings", label: "Settings", icon: Settings },
+];
+
 export function AppSidebar({ type = "admin" }: { type?: "admin" | "tenant" }) {
   const pathname = usePathname();
-  const navItems = type === "admin" ? adminNavItems : [];
+  const navItems = type === "admin" ? adminNavItems : tenantNavItems;
 
   return (
     <div className="flex h-full w-64 flex-col border-r bg-card">
@@ -61,11 +75,15 @@ export function AppSidebar({ type = "admin" }: { type?: "admin" | "tenant" }) {
       <div className="border-t p-4">
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-            A
+            {type === "admin" ? "A" : "U"}
           </div>
           <div className="flex-1 overflow-hidden">
-            <div className="font-medium text-sm">Admin User</div>
-            <div className="text-xs text-muted-foreground truncate">admin@waresync.com</div>
+            <div className="font-medium text-sm">
+              {type === "admin" ? "Admin User" : "John Doe"}
+            </div>
+            <div className="text-xs text-muted-foreground truncate">
+              {type === "admin" ? "admin@waresync.com" : "john@acme.com"}
+            </div>
           </div>
         </div>
       </div>
