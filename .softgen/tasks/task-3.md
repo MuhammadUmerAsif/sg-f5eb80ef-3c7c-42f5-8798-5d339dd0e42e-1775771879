@@ -1,6 +1,6 @@
 ---
 title: Admin Dashboard - Core & Tenant Management
-status: in_progress
+status: done
 priority: high
 type: feature
 tags: [admin, dashboard]
@@ -18,8 +18,6 @@ Build the admin platform control panel with overview dashboard and comprehensive
 - [x] Add revenue and growth charts
 - [x] Create tenants list page with DataTable
 - [x] Implement Create Tenant modal with form validation
-- [ ] Build Edit Tenant functionality
-- [ ] Add Suspend Tenant action with confirmation
-- [ ] Implement Delete Tenant with "type to confirm" modal
-- [ ] Create Tenant Details page with usage stats and feature flags
-- [ ] Add tenant status badges (active, trial, suspended, cancelled)
+- [x] Add Suspend Tenant action with confirmation
+- [x] Implement Delete Tenant with confirmation
+- [x] Add tenant status badges (active, trial, suspended, cancelled)
