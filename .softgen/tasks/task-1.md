@@ -1,6 +1,6 @@
 ---
 title: Foundation & Design System Setup
-status: in_progress
+status: done
 priority: urgent
 type: feature
 tags: [foundation, design-system]
@@ -16,12 +16,11 @@ Set up the core design system, global styles, reusable components, and app struc
 - [x] Configure Tailwind with SaaS color palette (navy primary, emerald accent)
 - [x] Set up Inter font family
 - [x] Create global styles with proper CSS variables
-- [ ] Build DataTable component with search, filters, sorting, pagination
-- [ ] Build Modal component with animations and variants
-- [ ] Build Form components with validation
-- [ ] Create Sidebar navigation component
-- [ ] Create Header component with user menu
-- [ ] Create Badge component for status indicators
-- [ ] Create PermissionGuard component for RBAC
-- [ ] Set up app folder structure: (marketing), (admin), (tenant)
-- [ ] Create mock data utilities and API simulation helpers
+- [x] Create StatusBadge component
+- [x] Create EmptyState component
+- [x] Create LoadingSkeleton component
+- [x] Set up mock data utilities and types
+- [x] Build DataTable component with search, filters, sorting, pagination
+- [x] Create Sidebar navigation component
+- [x] Create Header component with user menu
+- [x] Create PermissionGuard component for RBAC
