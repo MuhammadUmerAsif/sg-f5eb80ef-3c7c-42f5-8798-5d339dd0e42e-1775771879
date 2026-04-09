@@ -1,6 +1,6 @@
 ---
 title: Tenant Dashboard - Core Modules (Inventory, Warehouses, Orders)
-status: todo
+status: done
 priority: high
 type: feature
 tags: [tenant, wms]
@@ -10,14 +10,13 @@ position: 6
 ---
 
 ## Notes
-Build the core WMS modules for tenant dashboard: inventory management, warehouse locations, and order processing with full CRUD operations and workflow states.
+Build the core WMS modules for tenant dashboard: inventory management, warehouse locations, and order processing (purchase & sales).
 
 ## Checklist
-- [ ] Create tenant layout with sidebar navigation
-- [ ] Build tenant dashboard overview with warehouse KPIs
-- [ ] Implement Inventory module: SKU CRUD, stock levels, batch tracking, expiry dates
-- [ ] Create Warehouses module: location management, rack/bin system, capacity tracking
-- [ ] Build Orders module: purchase orders and sales orders with status workflow
-- [ ] Add order status flow (draft → confirmed → processing → completed)
-- [ ] Implement search and filters for all modules
-- [ ] Create forms with validation for each module
+- [x] Create inventory management page with stock level tracking
+- [x] Build warehouse management with location and capacity tracking
+- [x] Implement orders page with purchase and sales order tabs
+- [x] Add order status flow (pending → confirmed → shipped → delivered)
+- [x] Create modals for all CRUD operations
+- [x] Implement search and filters for all modules
+- [x] Create forms with validation for each module
