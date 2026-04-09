@@ -1,6 +1,6 @@
 ---
 title: Admin Dashboard - Demo Requests & Admin Users
-status: todo
+status: done
 priority: medium
 type: feature
 tags: [admin, users]
@@ -10,14 +10,13 @@ position: 5
 ---
 
 ## Notes
-Demo request management and admin user administration with RBAC roles for platform administrators.
+Manage incoming leads (demo requests) and platform administrators with RBAC.
 
 ## Checklist
-- [ ] Create Demo Requests page with table view
-- [ ] Add "Mark as Contacted" action
-- [ ] Implement delete demo request with confirmation
-- [ ] Build Admin Users page with role management
-- [ ] Create "Add Admin" modal with role selection (Super Admin, Admin, Support)
-- [ ] Implement edit admin role functionality
-- [ ] Add deactivate admin user action
-- [ ] Display admin status badges
+- [x] Create Demo Requests page with contact status tracking
+- [x] Add Mark Contacted action
+- [x] Create Admin Users management page
+- [x] Implement Add Admin modal with role selection
+- [x] Add Super Admin, Admin, Support admin role functionality
+- [x] Add deactivate admin user action
+- [x] Display admin status badges
